@@ -1,0 +1,8 @@
+package com.studentmarksheet.entity;
+
+public class Snippet {
+	public static void main(String[] args) {
+		com.studentmarksheet
+	}
+}
+
