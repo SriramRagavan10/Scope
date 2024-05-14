@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -47,6 +48,16 @@ public class StudentController {
 	@GetMapping(value = "/getAll")
 	public List<Student> getAll() {
 		return studSer.getAll();
+	}
+
+	@PatchMapping(value = "/modify/{id}")
+	public String mod(@PathVariable int id, @RequestBody Student stu) {
+		return studSer.mod(id, stu);
+	}
+
+	@PatchMapping(value = "/change/{id}")
+	public String change(@PathVariable int id, @RequestBody Student stu) {
+		return studSer.change(id, stu);
 	}
 
 }

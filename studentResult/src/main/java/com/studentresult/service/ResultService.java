@@ -34,7 +34,7 @@ public class ResultService {
 				}).getBody();
 		for (int i = 0; i < name.size(); i++) {
 			Result reset = new Result();
-			for (int j = 0; j < name.size(); j++) {
+			for (int j = 0; j < mar.size(); j++) {
 				if (mar.get(i).getRollNumber() == name.get(j).getRollNumber()) {
 					reset.setId(name.get(i).getId());
 					reset.setName(name.get(i).getName());

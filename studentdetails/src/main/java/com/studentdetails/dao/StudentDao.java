@@ -37,4 +37,12 @@ public class StudentDao {
 		return studRep.findAll();
 	}
 
+	public String mod(int id, Student stu) {
+		Student s = studRep.findById(id).get();
+		s.setAge(stu.getAge());
+		s.setCourse(stu.getCourse());
+		studRep.save(s);
+		return "Data Changed";
+	}
+
 }

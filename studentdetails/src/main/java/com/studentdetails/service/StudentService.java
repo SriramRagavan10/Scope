@@ -53,4 +53,21 @@ public class StudentService {
 		return studDao.getAll();
 	}
 
+	public String mod(int id, Student stu) {
+		return studDao.mod(id, stu);
+	}
+
+	public String change(int id, Student stu) {
+		List<Student> s = studDao.getAll();
+		Student v = new Student();
+		for (Student x : s) {
+			if (x.getId() == id) {
+				x.setAge(stu.getAge());
+				x.setCourse(stu.getCourse());
+			}
+			v = x;
+		}
+		return studDao.update(v);
+	}
+
 }
